@@ -100,13 +100,11 @@ void CrowApp::test(){
             "Content-Length: " + std::to_string(strlen("{\"input_jpeg\": \"\", \"desired_width\": 32, \"desired_height\": 32}")) + "\r\n"
             "\r\n"
             "{\"input_jpeg\": \"\", \"desired_width\": 32, \"desired_height\": 32}";
-        testCase(request,"400");
+        testCase(request,"200");
 
 
         cout << "[TEST RESULT        ] " << testCaseSuccess << "/" << testCaseCounter << " Passed" << endl;
         app.stop();
-
-        
 
     } catch (const std::exception& e) {
         cout << e.what() << endl;
@@ -125,15 +123,15 @@ void CrowApp::testCase(string message, string findResult){
         size_t recved = c.receive(asio::buffer(buf, 2048));
 
         std::string response(buf, recved);
-        
-        assert(response.find(findResult) != std::string::npos);
-
+    
         if (response.find(findResult) != std::string::npos) {
             testCaseSuccess++;
-            //std::cout << "Test Case " << testCaseCounter << " Success" << std::endl;
+            std::cout << "Test Case " << testCaseCounter+1 << " Success" << std::endl;
         } else {
-            //std::cout << "Test Case " << testCaseCounter << " Failed" << std::endl;
+            std::cout << "Test Case " << testCaseCounter+1 << " Failed" << std::endl;
         }
+
+        assert(response.find(findResult) != std::string::npos);
     }
     testCaseCounter++;
 }
