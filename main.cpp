@@ -100,7 +100,7 @@ void CrowApp::test(){
             "Content-Length: " + std::to_string(strlen("{\"input_jpeg\": \"\", \"desired_width\": 32, \"desired_height\": 32}")) + "\r\n"
             "\r\n"
             "{\"input_jpeg\": \"\", \"desired_width\": 32, \"desired_height\": 32}";
-        testCase(request,"200");
+        testCase(request,"400");
 
 
         cout << "[TEST RESULT        ] " << testCaseSuccess << "/" << testCaseCounter << " Passed" << endl;
