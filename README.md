@@ -12,7 +12,7 @@ Included :
 
 * Crow
 * Asio
-* Base64 (modified)
+* Base64
 
 ## Usage
 
