@@ -16,7 +16,7 @@ Included :
 
 ## Usage
 
-Specify port 
+Specify port (with enpoint /image_resizing) 
 ```javascript
 crowApp.runServer(8080);
 ```
