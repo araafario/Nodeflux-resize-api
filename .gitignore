@@ -10,8 +10,8 @@ compile_commands.json
 CTestTestfile.cmake
 _deps
 
-build/*
-.vscode/*
+/build/*
+/.vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
